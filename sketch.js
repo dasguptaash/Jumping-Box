@@ -12,6 +12,7 @@ function preload(){
 function setup(){
     canvas = createCanvas(800,600);
 
+    music.play();
     
     block1 = createSprite(0,600,360,50);
     block1.shapeColor = "blue";
@@ -43,25 +44,28 @@ function draw() {
 
     
     //write code to bounce off ball from the block1 
-    if(block1.isTouching(ball)){
+    if(block1.isTouching(ball) && ball.bounceOff(block1)){
         ball.shapeColor = "blue";
     }
 
     
 
-    if(block2.isTouching(ball)){
+    if(block2.isTouching(ball) && ball.bounceOff(block2)){
         ball.shapeColor = "orange";
-        music.play();
+        ball.velocityX = 0;
+        ball.velocityY = 0;
+        music.stop();
+
         //write code to set velocityX and velocityY of ball as 0
 
         //write code to stop music
     }
 
-    if(block3.isTouching(ball)){
+    if(block3.isTouching(ball) && ball.bounceOff(block3)){
         ball.shapeColor = "red";
     }
 
-    if(block4.isTouching(ball)){
+    if(block4.isTouching(ball) && ball.bounceOff(block1)){
         ball.shapeColor = "green";
     }
 
