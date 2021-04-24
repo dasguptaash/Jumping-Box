@@ -65,7 +65,7 @@ function draw() {
         ball.shapeColor = "red";
     }
 
-    if(block4.isTouching(ball) && ball.bounceOff(block1)){
+    if(block4.isTouching(ball) && ball.bounceOff(block4)){
         ball.shapeColor = "green";
     }
 
